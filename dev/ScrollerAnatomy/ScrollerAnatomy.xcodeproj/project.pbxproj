@@ -14,17 +14,15 @@
 		E2F4AB73185F67CC00AA3376 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2F4AB71185F67CC00AA3376 /* InfoPlist.strings */; };
 		E2F4AB75185F67CC00AA3376 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F4AB74185F67CC00AA3376 /* main.m */; };
 		E2F4AB79185F67CC00AA3376 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F4AB78185F67CC00AA3376 /* AppDelegate.m */; };
-		E2F4AB7C185F67CC00AA3376 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2F4AB7A185F67CC00AA3376 /* Main_iPhone.storyboard */; };
-		E2F4AB7F185F67CC00AA3376 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2F4AB7D185F67CC00AA3376 /* Main_iPad.storyboard */; };
 		E2F4AB82185F67CC00AA3376 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F4AB81185F67CC00AA3376 /* ViewController.m */; };
-		E2F4AB85185F67CC00AA3376 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F4AB84185F67CC00AA3376 /* MyScene.m */; };
-		E2F4AB87185F67CC00AA3376 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = E2F4AB86185F67CC00AA3376 /* Spaceship.png */; };
 		E2F4AB89185F67CC00AA3376 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2F4AB88185F67CC00AA3376 /* Images.xcassets */; };
 		E2F4AB90185F67CC00AA3376 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F4AB8F185F67CC00AA3376 /* XCTest.framework */; };
 		E2F4AB91185F67CC00AA3376 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F4AB66185F67CC00AA3376 /* Foundation.framework */; };
 		E2F4AB92185F67CC00AA3376 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F4AB6A185F67CC00AA3376 /* UIKit.framework */; };
 		E2F4AB9A185F67CD00AA3376 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2F4AB98185F67CD00AA3376 /* InfoPlist.strings */; };
 		E2F4AB9C185F67CD00AA3376 /* ScrollerAnatomyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F4AB9B185F67CD00AA3376 /* ScrollerAnatomyTests.m */; };
+		E2F4ABAF185F6C3400AA3376 /* BaseScrollerScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F4ABAE185F6C3400AA3376 /* BaseScrollerScene.m */; };
+		E2F4ABB3185F6CB800AA3376 /* VectorScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F4ABB2185F6CB800AA3376 /* VectorScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,19 +47,18 @@
 		E2F4AB76185F67CC00AA3376 /* ScrollerAnatomy-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScrollerAnatomy-Prefix.pch"; sourceTree = "<group>"; };
 		E2F4AB77185F67CC00AA3376 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E2F4AB78185F67CC00AA3376 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E2F4AB7B185F67CC00AA3376 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		E2F4AB7E185F67CC00AA3376 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		E2F4AB80185F67CC00AA3376 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E2F4AB81185F67CC00AA3376 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		E2F4AB83185F67CC00AA3376 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
-		E2F4AB84185F67CC00AA3376 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
-		E2F4AB86185F67CC00AA3376 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		E2F4AB88185F67CC00AA3376 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E2F4AB8E185F67CC00AA3376 /* ScrollerAnatomyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrollerAnatomyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F4AB8F185F67CC00AA3376 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		E2F4AB97185F67CD00AA3376 /* ScrollerAnatomyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ScrollerAnatomyTests-Info.plist"; sourceTree = "<group>"; };
 		E2F4AB99185F67CD00AA3376 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E2F4AB9B185F67CD00AA3376 /* ScrollerAnatomyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollerAnatomyTests.m; sourceTree = "<group>"; };
+		E2F4ABAD185F6C3400AA3376 /* BaseScrollerScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseScrollerScene.h; path = "Classes/scenes/scroller scenes/BaseScrollerScene.h"; sourceTree = "<group>"; };
+		E2F4ABAE185F6C3400AA3376 /* BaseScrollerScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseScrollerScene.m; path = "Classes/scenes/scroller scenes/BaseScrollerScene.m"; sourceTree = "<group>"; };
+		E2F4ABB1185F6CB800AA3376 /* VectorScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VectorScene.h; path = "Classes/scenes/scroller scenes/VectorScene/VectorScene.h"; sourceTree = "<group>"; };
+		E2F4ABB2185F6CB800AA3376 /* VectorScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VectorScene.m; path = "Classes/scenes/scroller scenes/VectorScene/VectorScene.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,15 +120,11 @@
 		E2F4AB6E185F67CC00AA3376 /* ScrollerAnatomy */ = {
 			isa = PBXGroup;
 			children = (
+				E2F4ABA5185F6B5800AA3376 /* Classes */,
 				E2F4AB77185F67CC00AA3376 /* AppDelegate.h */,
 				E2F4AB78185F67CC00AA3376 /* AppDelegate.m */,
-				E2F4AB7A185F67CC00AA3376 /* Main_iPhone.storyboard */,
-				E2F4AB7D185F67CC00AA3376 /* Main_iPad.storyboard */,
 				E2F4AB80185F67CC00AA3376 /* ViewController.h */,
 				E2F4AB81185F67CC00AA3376 /* ViewController.m */,
-				E2F4AB83185F67CC00AA3376 /* MyScene.h */,
-				E2F4AB84185F67CC00AA3376 /* MyScene.m */,
-				E2F4AB86185F67CC00AA3376 /* Spaceship.png */,
 				E2F4AB88185F67CC00AA3376 /* Images.xcassets */,
 				E2F4AB6F185F67CC00AA3376 /* Supporting Files */,
 			);
@@ -165,6 +158,57 @@
 				E2F4AB98185F67CD00AA3376 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E2F4ABA5185F6B5800AA3376 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E2F4ABA9185F6B7700AA3376 /* Views */,
+				E2F4ABA6185F6B5F00AA3376 /* scenes */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		E2F4ABA6185F6B5F00AA3376 /* scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E2F4ABA8185F6B6900AA3376 /* InfoScene */,
+				E2F4ABA7185F6B6200AA3376 /* scroller scenes */,
+			);
+			name = scenes;
+			sourceTree = "<group>";
+		};
+		E2F4ABA7185F6B6200AA3376 /* scroller scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E2F4ABB0185F6C5400AA3376 /* VectorScrollerScene */,
+				E2F4ABAD185F6C3400AA3376 /* BaseScrollerScene.h */,
+				E2F4ABAE185F6C3400AA3376 /* BaseScrollerScene.m */,
+			);
+			name = "scroller scenes";
+			sourceTree = "<group>";
+		};
+		E2F4ABA8185F6B6900AA3376 /* InfoScene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = InfoScene;
+			sourceTree = "<group>";
+		};
+		E2F4ABA9185F6B7700AA3376 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		E2F4ABB0185F6C5400AA3376 /* VectorScrollerScene */ = {
+			isa = PBXGroup;
+			children = (
+				E2F4ABB1185F6CB800AA3376 /* VectorScene.h */,
+				E2F4ABB2185F6CB800AA3376 /* VectorScene.m */,
+			);
+			name = VectorScrollerScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,10 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2F4AB87185F67CC00AA3376 /* Spaceship.png in Resources */,
 				E2F4AB89185F67CC00AA3376 /* Images.xcassets in Resources */,
-				E2F4AB7F185F67CC00AA3376 /* Main_iPad.storyboard in Resources */,
-				E2F4AB7C185F67CC00AA3376 /* Main_iPhone.storyboard in Resources */,
 				E2F4AB73185F67CC00AA3376 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,8 +307,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2F4AB85185F67CC00AA3376 /* MyScene.m in Sources */,
+				E2F4ABB3185F6CB800AA3376 /* VectorScene.m in Sources */,
 				E2F4AB82185F67CC00AA3376 /* ViewController.m in Sources */,
+				E2F4ABAF185F6C3400AA3376 /* BaseScrollerScene.m in Sources */,
 				E2F4AB79185F67CC00AA3376 /* AppDelegate.m in Sources */,
 				E2F4AB75185F67CC00AA3376 /* main.m in Sources */,
 			);
@@ -298,22 +340,6 @@
 				E2F4AB72185F67CC00AA3376 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		E2F4AB7A185F67CC00AA3376 /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E2F4AB7B185F67CC00AA3376 /* Base */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		E2F4AB7D185F67CC00AA3376 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E2F4AB7E185F67CC00AA3376 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		E2F4AB98185F67CD00AA3376 /* InfoPlist.strings */ = {

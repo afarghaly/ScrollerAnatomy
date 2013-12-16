@@ -7,39 +7,57 @@
 //
 
 #import "ViewController.h"
-#import "MyScene.h"
+#import "BaseScrollerScene.h"
+
+
+@interface ViewController()
+{
+    SKView *gameSKView;
+    
+    UIView *overlaysView;
+    
+}
+@end
+
+
+// -
+
 
 @implementation ViewController
+
+
+#pragma mark -
+#pragma mark ViewController methods
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    // Configure the view.
-    SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
-    
-    // Create and configure the scene.
-    SKScene * scene = [MyScene sceneWithSize:skView.bounds.size];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
-    
-    // Present the scene.
-    [skView presentScene:scene];
 }
 
-- (BOOL)shouldAutorotate
+- (void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    
+    if(!gameSKView)
+    {
+        gameSKView = [[SKView alloc] initWithFrame:self.view.bounds];
+        gameSKView.userInteractionEnabled = YES;
+        gameSKView.showsFPS = YES;
+        gameSKView.showsNodeCount = YES;
+        gameSKView.showsDrawCount = YES;
+    }
+    [self.view addSubview:gameSKView];
+    
+    BaseScrollerScene *baseScene = [BaseScrollerScene sceneWithSize:gameSKView.bounds.size];
+    baseScene.scaleMode = SKSceneScaleModeAspectFill;
+    [gameSKView presentScene:baseScene];
+}
+
+- (BOOL)prefersStatusBarHidden
 {
     return YES;
-}
-
-- (NSUInteger)supportedInterfaceOrientations
-{
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return UIInterfaceOrientationMaskAllButUpsideDown;
-    } else {
-        return UIInterfaceOrientationMaskAll;
-    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,4 +66,27 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+// --------------------
+
+#pragma mark -
+#pragma mark Pause methods
+
+- (void)pauseGame
+{
+    NSLog(@"pause game");
+}
+
+- (void)unpauseGame
+{
+    NSLog(@"unpause game");
+}
+
+// --------------------
+
+
+
 @end
+
+
+
+

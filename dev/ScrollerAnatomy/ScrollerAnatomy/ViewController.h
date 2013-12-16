@@ -11,4 +11,7 @@
 
 @interface ViewController : UIViewController
 
+- (void)pauseGame;
+- (void)unpauseGame;
+
 @end
