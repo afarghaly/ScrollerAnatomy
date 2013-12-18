@@ -8,6 +8,11 @@
 
 #import "AppDelegate.h"
 
+// app singletons
+#import "DeviceUtils.h"
+#import "ColorUtils.h"
+#import "DataUtils.h"
+//#import "TextureUtils.h"
 
 @implementation AppDelegate
 
@@ -17,6 +22,12 @@
     
     NSLog(@"Scroller Anatomy 1.0");
     NSLog(@" ");
+    
+    // init data / app singletons
+    [DeviceUtils sharedDeviceUtils];
+    [DataUtils sharedDataManager];
+    [ColorUtils sharedColorUtils];
+    
     
     // init window
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

@@ -7,6 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E2473775186254F700AA98B8 /* ForestScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E2473774186254F700AA98B8 /* ForestScene.m */; };
+		E247377918625C0000AA98B8 /* DataUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E247377818625C0000AA98B8 /* DataUtils.m */; };
+		E2A2D6EE1862069A0011078F /* EmptyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A2D6ED1862069A0011078F /* EmptyScene.m */; };
+		E2A2D6F5186208320011078F /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A2D6F4186208320011078F /* MenuView.m */; };
+		E2A2D6FA186211070011078F /* desertButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A2D6F8186211070011078F /* desertButton@2x.png */; };
+		E2A2D6FB186211070011078F /* forestButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A2D6F9186211070011078F /* forestButton@2x.png */; };
+		E2A2D70018621CBB0011078F /* desertTerrainTexture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A2D6FD18621CBB0011078F /* desertTerrainTexture@2x.png */; };
+		E2A2D70118621CBB0011078F /* dirtTerrainTexture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A2D6FE18621CBB0011078F /* dirtTerrainTexture@2x.png */; };
+		E2A2D70218621CBB0011078F /* snowTerrainTexture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A2D6FF18621CBB0011078F /* snowTerrainTexture@2x.png */; };
+		E2A2D704186225740011078F /* mountainsButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A2D703186225740011078F /* mountainsButton@2x.png */; };
+		E2A2D7061862271E0011078F /* anatomyButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A2D7051862271E0011078F /* anatomyButton@2x.png */; };
+		E2A2D70818622A3D0011078F /* honeycombButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A2D70718622A3D0011078F /* honeycombButton@2x.png */; };
+		E2AFC9A41860D95C00523F2F /* DebugView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2AFC9A31860D95C00523F2F /* DebugView.m */; };
+		E2AFC9B51860DAD500523F2F /* CloseButton@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = E2AFC9A91860DAD500523F2F /* CloseButton@2x~ipad.png */; };
+		E2AFC9B61860DAD500523F2F /* CloseButton@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = E2AFC9AA1860DAD500523F2F /* CloseButton@2x~iphone.png */; };
+		E2AFC9B71860DAD500523F2F /* refreshButton@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = E2AFC9AC1860DAD500523F2F /* refreshButton@2x~ipad.png */; };
+		E2AFC9B81860DAD500523F2F /* refreshButton@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = E2AFC9AD1860DAD500523F2F /* refreshButton@2x~iphone.png */; };
+		E2AFC9B91860DAD500523F2F /* zoomInButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2AFC9AF1860DAD500523F2F /* zoomInButton@2x.png */; };
+		E2AFC9BA1860DAD500523F2F /* zoomInButton@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = E2AFC9B01860DAD500523F2F /* zoomInButton@2x~ipad.png */; };
+		E2AFC9BB1860DAD500523F2F /* zoomInButton@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = E2AFC9B11860DAD500523F2F /* zoomInButton@2x~iphone.png */; };
+		E2AFC9BC1860DAD500523F2F /* zoomOutButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2AFC9B21860DAD500523F2F /* zoomOutButton@2x.png */; };
+		E2AFC9BD1860DAD500523F2F /* zoomOutButton@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = E2AFC9B31860DAD500523F2F /* zoomOutButton@2x~ipad.png */; };
+		E2AFC9BE1860DAD500523F2F /* zoomOutButton@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = E2AFC9B41860DAD500523F2F /* zoomOutButton@2x~iphone.png */; };
+		E2AFC9C21860F8B400523F2F /* Terrain.m in Sources */ = {isa = PBXBuildFile; fileRef = E2AFC9C11860F8B400523F2F /* Terrain.m */; };
+		E2DED1891860C31400476268 /* ScrollingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DED1881860C31400476268 /* ScrollingLayer.m */; };
+		E2DED1971860C40400476268 /* ColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DED18D1860C40400476268 /* ColorUtils.m */; };
+		E2DED1981860C40400476268 /* DeviceUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DED1901860C40400476268 /* DeviceUtils.m */; };
+		E2DED1991860C40400476268 /* TextureUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DED1931860C40400476268 /* TextureUtils.m */; };
+		E2DED19A1860C40400476268 /* UIDeviceAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DED1961860C40400476268 /* UIDeviceAdditions.m */; };
+		E2DED19E1860C7E100476268 /* GradientNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DED19D1860C7E100476268 /* GradientNode.m */; };
+		E2DED1A41860CA2E00476268 /* DistantSceneryNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DED1A11860CA2E00476268 /* DistantSceneryNode.m */; };
+		E2DED1A51860CA2E00476268 /* NearSceneryNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DED1A31860CA2E00476268 /* NearSceneryNode.m */; };
 		E2F4AB67185F67CC00AA3376 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F4AB66185F67CC00AA3376 /* Foundation.framework */; };
 		E2F4AB69185F67CC00AA3376 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F4AB68185F67CC00AA3376 /* CoreGraphics.framework */; };
 		E2F4AB6B185F67CC00AA3376 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F4AB6A185F67CC00AA3376 /* UIKit.framework */; };
@@ -36,6 +68,52 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E2473773186254F700AA98B8 /* ForestScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForestScene.h; path = "Classes/scenes/scroller scenes/ForestScene/ForestScene.h"; sourceTree = "<group>"; };
+		E2473774186254F700AA98B8 /* ForestScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForestScene.m; path = "Classes/scenes/scroller scenes/ForestScene/ForestScene.m"; sourceTree = "<group>"; };
+		E247377718625C0000AA98B8 /* DataUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataUtils.h; sourceTree = "<group>"; };
+		E247377818625C0000AA98B8 /* DataUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataUtils.m; sourceTree = "<group>"; };
+		E2A2D6EC1862069A0011078F /* EmptyScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmptyScene.h; path = Classes/scenes/EmptyScene/EmptyScene.h; sourceTree = "<group>"; };
+		E2A2D6ED1862069A0011078F /* EmptyScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmptyScene.m; path = Classes/scenes/EmptyScene/EmptyScene.m; sourceTree = "<group>"; };
+		E2A2D6F3186208320011078F /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuView.h; path = menuView/MenuView.h; sourceTree = "<group>"; };
+		E2A2D6F4186208320011078F /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuView.m; path = menuView/MenuView.m; sourceTree = "<group>"; };
+		E2A2D6F8186211070011078F /* desertButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "desertButton@2x.png"; sourceTree = "<group>"; };
+		E2A2D6F9186211070011078F /* forestButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forestButton@2x.png"; sourceTree = "<group>"; };
+		E2A2D6FD18621CBB0011078F /* desertTerrainTexture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "desertTerrainTexture@2x.png"; sourceTree = "<group>"; };
+		E2A2D6FE18621CBB0011078F /* dirtTerrainTexture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dirtTerrainTexture@2x.png"; sourceTree = "<group>"; };
+		E2A2D6FF18621CBB0011078F /* snowTerrainTexture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snowTerrainTexture@2x.png"; sourceTree = "<group>"; };
+		E2A2D703186225740011078F /* mountainsButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mountainsButton@2x.png"; sourceTree = "<group>"; };
+		E2A2D7051862271E0011078F /* anatomyButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "anatomyButton@2x.png"; sourceTree = "<group>"; };
+		E2A2D70718622A3D0011078F /* honeycombButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "honeycombButton@2x.png"; sourceTree = "<group>"; };
+		E2AFC9A21860D95C00523F2F /* DebugView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugView.h; sourceTree = "<group>"; };
+		E2AFC9A31860D95C00523F2F /* DebugView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugView.m; sourceTree = "<group>"; };
+		E2AFC9A91860DAD500523F2F /* CloseButton@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CloseButton@2x~ipad.png"; sourceTree = "<group>"; };
+		E2AFC9AA1860DAD500523F2F /* CloseButton@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CloseButton@2x~iphone.png"; sourceTree = "<group>"; };
+		E2AFC9AC1860DAD500523F2F /* refreshButton@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refreshButton@2x~ipad.png"; sourceTree = "<group>"; };
+		E2AFC9AD1860DAD500523F2F /* refreshButton@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refreshButton@2x~iphone.png"; sourceTree = "<group>"; };
+		E2AFC9AF1860DAD500523F2F /* zoomInButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zoomInButton@2x.png"; sourceTree = "<group>"; };
+		E2AFC9B01860DAD500523F2F /* zoomInButton@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zoomInButton@2x~ipad.png"; sourceTree = "<group>"; };
+		E2AFC9B11860DAD500523F2F /* zoomInButton@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zoomInButton@2x~iphone.png"; sourceTree = "<group>"; };
+		E2AFC9B21860DAD500523F2F /* zoomOutButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zoomOutButton@2x.png"; sourceTree = "<group>"; };
+		E2AFC9B31860DAD500523F2F /* zoomOutButton@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zoomOutButton@2x~ipad.png"; sourceTree = "<group>"; };
+		E2AFC9B41860DAD500523F2F /* zoomOutButton@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zoomOutButton@2x~iphone.png"; sourceTree = "<group>"; };
+		E2AFC9C01860F8B400523F2F /* Terrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Terrain.h; sourceTree = "<group>"; };
+		E2AFC9C11860F8B400523F2F /* Terrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Terrain.m; sourceTree = "<group>"; };
+		E2DED1871860C31400476268 /* ScrollingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollingLayer.h; path = Classes/nodes/ScrollingLayer/ScrollingLayer.h; sourceTree = "<group>"; };
+		E2DED1881860C31400476268 /* ScrollingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollingLayer.m; path = Classes/nodes/ScrollingLayer/ScrollingLayer.m; sourceTree = "<group>"; };
+		E2DED18C1860C40400476268 /* ColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorUtils.h; sourceTree = "<group>"; };
+		E2DED18D1860C40400476268 /* ColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorUtils.m; sourceTree = "<group>"; };
+		E2DED18F1860C40400476268 /* DeviceUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceUtils.h; sourceTree = "<group>"; };
+		E2DED1901860C40400476268 /* DeviceUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceUtils.m; sourceTree = "<group>"; };
+		E2DED1921860C40400476268 /* TextureUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureUtils.h; sourceTree = "<group>"; };
+		E2DED1931860C40400476268 /* TextureUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextureUtils.m; sourceTree = "<group>"; };
+		E2DED1951860C40400476268 /* UIDeviceAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDeviceAdditions.h; sourceTree = "<group>"; };
+		E2DED1961860C40400476268 /* UIDeviceAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDeviceAdditions.m; sourceTree = "<group>"; };
+		E2DED19C1860C7E100476268 /* GradientNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientNode.h; sourceTree = "<group>"; };
+		E2DED19D1860C7E100476268 /* GradientNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientNode.m; sourceTree = "<group>"; };
+		E2DED1A01860CA2E00476268 /* DistantSceneryNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistantSceneryNode.h; sourceTree = "<group>"; };
+		E2DED1A11860CA2E00476268 /* DistantSceneryNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistantSceneryNode.m; sourceTree = "<group>"; };
+		E2DED1A21860CA2E00476268 /* NearSceneryNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearSceneryNode.h; sourceTree = "<group>"; };
+		E2DED1A31860CA2E00476268 /* NearSceneryNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearSceneryNode.m; sourceTree = "<group>"; };
 		E2F4AB63185F67CC00AA3376 /* ScrollerAnatomy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollerAnatomy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F4AB66185F67CC00AA3376 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E2F4AB68185F67CC00AA3376 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -66,10 +144,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2F4AB67185F67CC00AA3376 /* Foundation.framework in Frameworks */,
 				E2F4AB69185F67CC00AA3376 /* CoreGraphics.framework in Frameworks */,
 				E2F4AB6B185F67CC00AA3376 /* UIKit.framework in Frameworks */,
 				E2F4AB6D185F67CC00AA3376 /* SpriteKit.framework in Frameworks */,
-				E2F4AB67185F67CC00AA3376 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +164,243 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E2473772186254D500AA98B8 /* ForestScene */ = {
+			isa = PBXGroup;
+			children = (
+				E2473773186254F700AA98B8 /* ForestScene.h */,
+				E2473774186254F700AA98B8 /* ForestScene.m */,
+			);
+			name = ForestScene;
+			sourceTree = "<group>";
+		};
+		E247377618625C0000AA98B8 /* DataUtils */ = {
+			isa = PBXGroup;
+			children = (
+				E247377718625C0000AA98B8 /* DataUtils.h */,
+				E247377818625C0000AA98B8 /* DataUtils.m */,
+			);
+			path = DataUtils;
+			sourceTree = "<group>";
+		};
+		E2A2D6EB1862066E0011078F /* EmptyScene */ = {
+			isa = PBXGroup;
+			children = (
+				E2A2D6EC1862069A0011078F /* EmptyScene.h */,
+				E2A2D6ED1862069A0011078F /* EmptyScene.m */,
+			);
+			name = EmptyScene;
+			sourceTree = "<group>";
+		};
+		E2A2D6EF186207E50011078F /* menuView */ = {
+			isa = PBXGroup;
+			children = (
+				E2A2D6F3186208320011078F /* MenuView.h */,
+				E2A2D6F4186208320011078F /* MenuView.m */,
+			);
+			name = menuView;
+			sourceTree = "<group>";
+		};
+		E2A2D6F7186211070011078F /* menu */ = {
+			isa = PBXGroup;
+			children = (
+				E2A2D70718622A3D0011078F /* honeycombButton@2x.png */,
+				E2A2D7051862271E0011078F /* anatomyButton@2x.png */,
+				E2A2D703186225740011078F /* mountainsButton@2x.png */,
+				E2A2D6F8186211070011078F /* desertButton@2x.png */,
+				E2A2D6F9186211070011078F /* forestButton@2x.png */,
+			);
+			path = menu;
+			sourceTree = "<group>";
+		};
+		E2A2D6FC18621CBB0011078F /* terrains */ = {
+			isa = PBXGroup;
+			children = (
+				E2A2D6FD18621CBB0011078F /* desertTerrainTexture@2x.png */,
+				E2A2D6FE18621CBB0011078F /* dirtTerrainTexture@2x.png */,
+				E2A2D6FF18621CBB0011078F /* snowTerrainTexture@2x.png */,
+			);
+			path = terrains;
+			sourceTree = "<group>";
+		};
+		E2AFC9A01860D95C00523F2F /* views */ = {
+			isa = PBXGroup;
+			children = (
+				E2A2D6EF186207E50011078F /* menuView */,
+				E2AFC9A11860D95C00523F2F /* debugView */,
+			);
+			name = views;
+			path = Classes/views;
+			sourceTree = "<group>";
+		};
+		E2AFC9A11860D95C00523F2F /* debugView */ = {
+			isa = PBXGroup;
+			children = (
+				E2AFC9A21860D95C00523F2F /* DebugView.h */,
+				E2AFC9A31860D95C00523F2F /* DebugView.m */,
+			);
+			path = debugView;
+			sourceTree = "<group>";
+		};
+		E2AFC9A51860DAD500523F2F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E2AFC9A61860DAD500523F2F /* images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E2AFC9A61860DAD500523F2F /* images */ = {
+			isa = PBXGroup;
+			children = (
+				E2A2D6FC18621CBB0011078F /* terrains */,
+				E2A2D6F7186211070011078F /* menu */,
+				E2AFC9A71860DAD500523F2F /* debug tool */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		E2AFC9A71860DAD500523F2F /* debug tool */ = {
+			isa = PBXGroup;
+			children = (
+				E2AFC9A81860DAD500523F2F /* closeButton */,
+				E2AFC9AB1860DAD500523F2F /* refresh button */,
+				E2AFC9AE1860DAD500523F2F /* zoom buttons */,
+			);
+			path = "debug tool";
+			sourceTree = "<group>";
+		};
+		E2AFC9A81860DAD500523F2F /* closeButton */ = {
+			isa = PBXGroup;
+			children = (
+				E2AFC9A91860DAD500523F2F /* CloseButton@2x~ipad.png */,
+				E2AFC9AA1860DAD500523F2F /* CloseButton@2x~iphone.png */,
+			);
+			path = closeButton;
+			sourceTree = "<group>";
+		};
+		E2AFC9AB1860DAD500523F2F /* refresh button */ = {
+			isa = PBXGroup;
+			children = (
+				E2AFC9AC1860DAD500523F2F /* refreshButton@2x~ipad.png */,
+				E2AFC9AD1860DAD500523F2F /* refreshButton@2x~iphone.png */,
+			);
+			path = "refresh button";
+			sourceTree = "<group>";
+		};
+		E2AFC9AE1860DAD500523F2F /* zoom buttons */ = {
+			isa = PBXGroup;
+			children = (
+				E2AFC9AF1860DAD500523F2F /* zoomInButton@2x.png */,
+				E2AFC9B01860DAD500523F2F /* zoomInButton@2x~ipad.png */,
+				E2AFC9B11860DAD500523F2F /* zoomInButton@2x~iphone.png */,
+				E2AFC9B21860DAD500523F2F /* zoomOutButton@2x.png */,
+				E2AFC9B31860DAD500523F2F /* zoomOutButton@2x~ipad.png */,
+				E2AFC9B41860DAD500523F2F /* zoomOutButton@2x~iphone.png */,
+			);
+			path = "zoom buttons";
+			sourceTree = "<group>";
+		};
+		E2AFC9BF1860F8B400523F2F /* Terrain */ = {
+			isa = PBXGroup;
+			children = (
+				E2AFC9C01860F8B400523F2F /* Terrain.h */,
+				E2AFC9C11860F8B400523F2F /* Terrain.m */,
+			);
+			name = Terrain;
+			path = Classes/nodes/Terrain;
+			sourceTree = "<group>";
+		};
+		E2DED1851860C2D900476268 /* nodes */ = {
+			isa = PBXGroup;
+			children = (
+				E2AFC9BF1860F8B400523F2F /* Terrain */,
+				E2DED19F1860CA2E00476268 /* Scenery */,
+				E2DED19B1860C7E100476268 /* GradientNode */,
+				E2DED1861860C2E200476268 /* ScrollingLayer */,
+			);
+			name = nodes;
+			sourceTree = "<group>";
+		};
+		E2DED1861860C2E200476268 /* ScrollingLayer */ = {
+			isa = PBXGroup;
+			children = (
+				E2DED1871860C31400476268 /* ScrollingLayer.h */,
+				E2DED1881860C31400476268 /* ScrollingLayer.m */,
+			);
+			name = ScrollingLayer;
+			sourceTree = "<group>";
+		};
+		E2DED18A1860C40400476268 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				E247377618625C0000AA98B8 /* DataUtils */,
+				E2DED18B1860C40400476268 /* ColorUtils */,
+				E2DED18E1860C40400476268 /* DeviceUtils */,
+				E2DED1911860C40400476268 /* TextureUtils */,
+				E2DED1941860C40400476268 /* UIDeviceAdditions */,
+			);
+			name = utils;
+			path = Classes/utils;
+			sourceTree = "<group>";
+		};
+		E2DED18B1860C40400476268 /* ColorUtils */ = {
+			isa = PBXGroup;
+			children = (
+				E2DED18C1860C40400476268 /* ColorUtils.h */,
+				E2DED18D1860C40400476268 /* ColorUtils.m */,
+			);
+			path = ColorUtils;
+			sourceTree = "<group>";
+		};
+		E2DED18E1860C40400476268 /* DeviceUtils */ = {
+			isa = PBXGroup;
+			children = (
+				E2DED18F1860C40400476268 /* DeviceUtils.h */,
+				E2DED1901860C40400476268 /* DeviceUtils.m */,
+			);
+			path = DeviceUtils;
+			sourceTree = "<group>";
+		};
+		E2DED1911860C40400476268 /* TextureUtils */ = {
+			isa = PBXGroup;
+			children = (
+				E2DED1921860C40400476268 /* TextureUtils.h */,
+				E2DED1931860C40400476268 /* TextureUtils.m */,
+			);
+			path = TextureUtils;
+			sourceTree = "<group>";
+		};
+		E2DED1941860C40400476268 /* UIDeviceAdditions */ = {
+			isa = PBXGroup;
+			children = (
+				E2DED1951860C40400476268 /* UIDeviceAdditions.h */,
+				E2DED1961860C40400476268 /* UIDeviceAdditions.m */,
+			);
+			path = UIDeviceAdditions;
+			sourceTree = "<group>";
+		};
+		E2DED19B1860C7E100476268 /* GradientNode */ = {
+			isa = PBXGroup;
+			children = (
+				E2DED19C1860C7E100476268 /* GradientNode.h */,
+				E2DED19D1860C7E100476268 /* GradientNode.m */,
+			);
+			name = GradientNode;
+			path = Classes/nodes/GradientNode;
+			sourceTree = "<group>";
+		};
+		E2DED19F1860CA2E00476268 /* Scenery */ = {
+			isa = PBXGroup;
+			children = (
+				E2DED1A01860CA2E00476268 /* DistantSceneryNode.h */,
+				E2DED1A11860CA2E00476268 /* DistantSceneryNode.m */,
+				E2DED1A21860CA2E00476268 /* NearSceneryNode.h */,
+				E2DED1A31860CA2E00476268 /* NearSceneryNode.m */,
+			);
+			name = Scenery;
+			path = Classes/nodes/Scenery;
+			sourceTree = "<group>";
+		};
 		E2F4AB5A185F67CC00AA3376 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				E2F4ABA5185F6B5800AA3376 /* Classes */,
+				E2AFC9A51860DAD500523F2F /* Resources */,
 				E2F4AB77185F67CC00AA3376 /* AppDelegate.h */,
 				E2F4AB78185F67CC00AA3376 /* AppDelegate.m */,
 				E2F4AB80185F67CC00AA3376 /* ViewController.h */,
@@ -163,7 +479,9 @@
 		E2F4ABA5185F6B5800AA3376 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				E2F4ABA9185F6B7700AA3376 /* Views */,
+				E2AFC9A01860D95C00523F2F /* views */,
+				E2DED18A1860C40400476268 /* utils */,
+				E2DED1851860C2D900476268 /* nodes */,
 				E2F4ABA6185F6B5F00AA3376 /* scenes */,
 			);
 			name = Classes;
@@ -181,6 +499,8 @@
 		E2F4ABA7185F6B6200AA3376 /* scroller scenes */ = {
 			isa = PBXGroup;
 			children = (
+				E2473772186254D500AA98B8 /* ForestScene */,
+				E2A2D6EB1862066E0011078F /* EmptyScene */,
 				E2F4ABB0185F6C5400AA3376 /* VectorScrollerScene */,
 				E2F4ABAD185F6C3400AA3376 /* BaseScrollerScene.h */,
 				E2F4ABAE185F6C3400AA3376 /* BaseScrollerScene.m */,
@@ -193,13 +513,6 @@
 			children = (
 			);
 			name = InfoScene;
-			sourceTree = "<group>";
-		};
-		E2F4ABA9185F6B7700AA3376 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Views;
 			sourceTree = "<group>";
 		};
 		E2F4ABB0185F6C5400AA3376 /* VectorScrollerScene */ = {
@@ -258,6 +571,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Ahmed Farghaly";
 				TargetAttributes = {
+					E2F4AB62185F67CC00AA3376 = {
+						DevelopmentTeam = UN2ZF7G28U;
+					};
 					E2F4AB8D185F67CC00AA3376 = {
 						TestTargetID = E2F4AB62185F67CC00AA3376;
 					};
@@ -288,7 +604,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2F4AB89185F67CC00AA3376 /* Images.xcassets in Resources */,
+				E2A2D6FB186211070011078F /* forestButton@2x.png in Resources */,
+				E2A2D70018621CBB0011078F /* desertTerrainTexture@2x.png in Resources */,
+				E2AFC9BA1860DAD500523F2F /* zoomInButton@2x~ipad.png in Resources */,
+				E2A2D6FA186211070011078F /* desertButton@2x.png in Resources */,
+				E2AFC9B61860DAD500523F2F /* CloseButton@2x~iphone.png in Resources */,
+				E2AFC9B81860DAD500523F2F /* refreshButton@2x~iphone.png in Resources */,
+				E2AFC9BB1860DAD500523F2F /* zoomInButton@2x~iphone.png in Resources */,
 				E2F4AB73185F67CC00AA3376 /* InfoPlist.strings in Resources */,
+				E2AFC9BE1860DAD500523F2F /* zoomOutButton@2x~iphone.png in Resources */,
+				E2AFC9B51860DAD500523F2F /* CloseButton@2x~ipad.png in Resources */,
+				E2AFC9B91860DAD500523F2F /* zoomInButton@2x.png in Resources */,
+				E2A2D70218621CBB0011078F /* snowTerrainTexture@2x.png in Resources */,
+				E2AFC9BC1860DAD500523F2F /* zoomOutButton@2x.png in Resources */,
+				E2A2D7061862271E0011078F /* anatomyButton@2x.png in Resources */,
+				E2AFC9B71860DAD500523F2F /* refreshButton@2x~ipad.png in Resources */,
+				E2AFC9BD1860DAD500523F2F /* zoomOutButton@2x~ipad.png in Resources */,
+				E2A2D70118621CBB0011078F /* dirtTerrainTexture@2x.png in Resources */,
+				E2A2D704186225740011078F /* mountainsButton@2x.png in Resources */,
+				E2A2D70818622A3D0011078F /* honeycombButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,9 +641,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2AFC9C21860F8B400523F2F /* Terrain.m in Sources */,
+				E2AFC9A41860D95C00523F2F /* DebugView.m in Sources */,
 				E2F4ABB3185F6CB800AA3376 /* VectorScene.m in Sources */,
+				E2DED1981860C40400476268 /* DeviceUtils.m in Sources */,
+				E2A2D6EE1862069A0011078F /* EmptyScene.m in Sources */,
+				E2A2D6F5186208320011078F /* MenuView.m in Sources */,
 				E2F4AB82185F67CC00AA3376 /* ViewController.m in Sources */,
+				E2DED19A1860C40400476268 /* UIDeviceAdditions.m in Sources */,
+				E2DED1971860C40400476268 /* ColorUtils.m in Sources */,
+				E2DED1A41860CA2E00476268 /* DistantSceneryNode.m in Sources */,
+				E2DED19E1860C7E100476268 /* GradientNode.m in Sources */,
 				E2F4ABAF185F6C3400AA3376 /* BaseScrollerScene.m in Sources */,
+				E247377918625C0000AA98B8 /* DataUtils.m in Sources */,
+				E2DED1A51860CA2E00476268 /* NearSceneryNode.m in Sources */,
+				E2473775186254F700AA98B8 /* ForestScene.m in Sources */,
+				E2DED1891860C31400476268 /* ScrollingLayer.m in Sources */,
+				E2DED1991860C40400476268 /* TextureUtils.m in Sources */,
 				E2F4AB79185F67CC00AA3376 /* AppDelegate.m in Sources */,
 				E2F4AB75185F67CC00AA3376 /* main.m in Sources */,
 			);
@@ -432,10 +780,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ScrollerAnatomy/ScrollerAnatomy-Prefix.pch";
 				INFOPLIST_FILE = "ScrollerAnatomy/ScrollerAnatomy-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "B6FEF696-A07C-4407-AD35-18C666306C95";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -446,10 +797,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ScrollerAnatomy/ScrollerAnatomy-Prefix.pch";
 				INFOPLIST_FILE = "ScrollerAnatomy/ScrollerAnatomy-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "B6FEF696-A07C-4407-AD35-18C666306C95";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -516,6 +870,7 @@
 				E2F4ABA1185F67CD00AA3376 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E2F4ABA2185F67CD00AA3376 /* Build configuration list for PBXNativeTarget "ScrollerAnatomyTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +879,7 @@
 				E2F4ABA4185F67CD00AA3376 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

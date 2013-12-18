@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
+#import "DebugView.h"
+#import "MenuView.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <DebugViewDlegate, MenuViewDelegate>
 
 - (void)pauseGame;
 - (void)unpauseGame;
+- (void)updateMemoryUsage;
 
 @end
