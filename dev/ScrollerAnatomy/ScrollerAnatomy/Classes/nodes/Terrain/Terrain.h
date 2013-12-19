@@ -10,6 +10,6 @@
 
 @interface Terrain : ScrollingLayer
 
-- (id)initWithTerrainColor:(SKColor *)terrainColor;
+- (id)initWithTerrainColor:(SKColor *)terrainColor_ showsBlockIndex:(BOOL)showsIndex_;
 
 @end

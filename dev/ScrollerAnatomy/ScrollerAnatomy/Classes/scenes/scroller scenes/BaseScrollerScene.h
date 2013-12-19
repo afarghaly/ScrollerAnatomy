@@ -8,8 +8,16 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+// app singletons
+#import "DeviceUtils.h"
+#import "DataUtils.h"
+#import "ColorUtils.h"
+
+// root objects
 #import "AppDelegate.h"
 #import "ViewController.h"
+
+
 
 @interface BaseScrollerScene : SKScene
 {

@@ -15,5 +15,6 @@
 
 - (SKColor *)getRandomColor;
 - (SKColor *)getColorFromHexString:(NSString *)hexString;
+- (SKColor *)getColorFromHexString:(NSString *)hexString alpha:(float)alpha_;
 
 @end

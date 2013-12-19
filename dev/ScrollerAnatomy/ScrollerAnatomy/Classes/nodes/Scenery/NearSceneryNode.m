@@ -11,10 +11,19 @@
 #import "DeviceUtils.h"
 
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
 @interface NearSceneryNode()
 {
     NSMutableDictionary *nearSceneryBlocksData;
+    
+    NearSceneryType sceneryType;
+    NSString *nearSceneryImageName;
     SKColor *nearSceneryColor;
+    float nearSceneryAlpha;
+    SKColor *nearSceneryStrokeColor;
+    float nearSceneryStrokeAlpha;
     float sceneryBaselineY;
 }
 
@@ -23,27 +32,72 @@
 
 @end
 
-// -
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 
 @implementation NearSceneryNode
 
 
-- (id)initWithNearSceneryColor:(SKColor *)nearSceneryColor_
+#pragma mark -
+#pragma mark init
+
+
+- (id)initWithNearSceneryType:(NearSceneryType)sceneryType_
+                   sceneColor:(SKColor *)nearSceneryColor_
+                  sceneryAlpha:(float)sceneryAlpha_
+            sceneryStrokeColor:(SKColor *)nearSceneryStrokeColor_
+            sceneryStrokeAlpha:(float)nearSceneryStrokeAlpha_
+               showsBlockIndex:(BOOL)showsIndex_
 {
-    self = [super init];
+    self = [super initShowingBlockIndex:showsIndex_];
     
     if(self)
     {
 //        BLOCK_WIDTH *= 1.5f;
+        
+        sceneryType = sceneryType_;
+        
         nearSceneryColor = nearSceneryColor_;
+        nearSceneryAlpha = sceneryAlpha_;
+        
+        nearSceneryStrokeColor = nearSceneryStrokeColor_;
+        nearSceneryStrokeAlpha = nearSceneryStrokeAlpha_;
+        
         nearSceneryBlocksData = [NSMutableDictionary dictionaryWithCapacity:100];
-        sceneryBaselineY = DeviceIsiPhone() ? 100 : 280;
         
         return self;
     }
     
     return nil;
 }
+
+- (id)initWithSceneryImage:(NSString *)sceneryImageName_ showsBlockIndex:(BOOL)showsIndex_
+{
+    self = [super initShowingBlockIndex:showsIndex_];
+    
+    if(self)
+    {
+        UIImage *testImage = [UIImage imageNamed:sceneryImageName_];
+        float sceneryImageWidth = testImage.size.width;
+        BLOCK_WIDTH = sceneryImageWidth;
+        
+        sceneryType = NearSceneryTypeImage;
+        
+        nearSceneryImageName = sceneryImageName_;
+        
+        return self;
+    }
+    
+    return nil;
+}
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+#pragma mark -
+#pragma mark block creation/modification methods
 
 
 - (SKNode *)newBlock
@@ -56,14 +110,35 @@
     SKLabelNode *blockID = (SKLabelNode *)[block childNodeWithName:@"blockID"];
     blockID.fontColor = [SKColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:0.3f];
     blockID.fontSize = DeviceIsiPhone() ? 30 : 60;
-    blockID.position = CGPointMake(0, DeviceIsiPhone() ? 180 : 400);
+    blockID.position = CGPointMake(0, DeviceIsiPhone() ? 100 : 250);
     
-    SKShapeNode *nearSceneryLayer = [[SKShapeNode alloc] init];
-    nearSceneryLayer.fillColor = nearSceneryColor;
-    nearSceneryLayer.strokeColor = [SKColor colorWithWhite:1.0f alpha:0.2f];
-    nearSceneryLayer.name = @"nearSceneryLayer";
-    [block addChild:nearSceneryLayer];
-    nearSceneryLayer.position = CGPointMake(-(BLOCK_WIDTH / 2), 0);
+    switch(sceneryType)
+    {
+        case NearSceneryTypeImage:
+        {
+            SKSpriteNode *distantScenerySpriteLayer = [SKSpriteNode spriteNodeWithImageNamed:nearSceneryImageName];
+            distantScenerySpriteLayer.anchorPoint = CGPointMake(0.0f, 0.0f);
+            distantScenerySpriteLayer.name = @"distantSceneryLayer";
+            [block addChild:distantScenerySpriteLayer];
+            distantScenerySpriteLayer.position = CGPointMake(-(BLOCK_WIDTH / 2), 0);
+        }
+            break;
+            
+        case NearSceneryTypeHills:
+        case NearSceneryTypeMountains:
+        {
+            SKShapeNode *nearSceneryLayer = [[SKShapeNode alloc] init];
+            nearSceneryLayer.fillColor = nearSceneryColor;
+            nearSceneryLayer.strokeColor = nearSceneryStrokeColor;
+            nearSceneryLayer.name = @"nearSceneryLayer";
+            [block addChild:nearSceneryLayer];
+            nearSceneryLayer.position = CGPointMake(-(BLOCK_WIDTH / 2), 0);
+        }
+            break;
+            
+        default:
+            break;
+    }
     
     return block;
 }
@@ -76,23 +151,41 @@
     SKLabelNode *blockID = (SKLabelNode *)[block_ childNodeWithName:@"blockID"];
     blockID.text = [NSString stringWithFormat:@"Near Scenery %d", index_];
     
-    SKShapeNode *nearSceneryLayer = (SKShapeNode *)[block_ childNodeWithName:@"nearSceneryLayer"];
-    nearSceneryLayer.path = nil;
+    switch(sceneryType)
+    {
+        case NearSceneryTypeImage:
+            
+            break;
+            
+        case NearSceneryTypeMountains:
+        case NearSceneryTypeHills:
+        {
+            SKShapeNode *nearSceneryLayer = (SKShapeNode *)[block_ childNodeWithName:@"nearSceneryLayer"];
+            nearSceneryLayer.path = nil;
+            
+            NSArray *blockData = [nearSceneryBlocksData objectForKey:[NSNumber numberWithInt:index_]];
+            if(blockData)
+            {
+                [self renderOvalTrees:blockData inBlock:block_];
+            }
+            else
+            {
+                //        NSLog(@"new near scenery block, render (%d)", [[nearSceneryBlocksData allKeys] count]);
+                blockData = [self newOvalTreesData];
+                [nearSceneryBlocksData setObject:blockData forKey:[NSNumber numberWithInt:index_]];
+                [self renderOvalTrees:blockData inBlock:block_];
+            }
+        }
+            break;
+            
+        default:
+            break;
+    }
     
-    NSArray *blockData = [nearSceneryBlocksData objectForKey:[NSNumber numberWithInt:index_]];
-    if(blockData)
-    {
-        [self renderOvalTrees:blockData inBlock:block_];
-    }
-    else
-    {
-//        NSLog(@"new near scenery block, render (%d)", [[nearSceneryBlocksData allKeys] count]);
-        blockData = [self newOvalTreesData];
-        [nearSceneryBlocksData setObject:blockData forKey:[NSNumber numberWithInt:index_]];
-        [self renderOvalTrees:blockData inBlock:block_];
-    }
 }
 
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
 #pragma mark -
@@ -101,6 +194,8 @@
 - (NSArray *)newOvalTreesData
 {
     NSMutableArray *pointsArray = [NSMutableArray arrayWithCapacity:10];
+    
+    sceneryBaselineY = DeviceIsiPhone() ? 30 : 60;
     
     uint treeCount = 5 + (arc4random() % 3);
     float treeWidth = BLOCK_WIDTH / treeCount;
@@ -134,7 +229,9 @@
     return pointsArray;
 }
 
-// ------------------------------------------------------------------------
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 
 #pragma mark -
 #pragma mark Near Scenery rendering
@@ -167,7 +264,9 @@
     path = nil;
 }
 
-// ------------------------------------------------------------------------
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 
 #pragma mark -
 #pragma mark Near Scenery cleanup
@@ -177,17 +276,23 @@
     for(SKNode *block in visibleBlocks)
     {
         SKShapeNode *nearSceneryLayer = (SKShapeNode *)[block childNodeWithName:@"nearSceneryLayer"];
-        nearSceneryLayer.path = nil;
-        [nearSceneryLayer removeFromParent];
-        nearSceneryLayer = nil;
+        if(sceneryType == NearSceneryTypeHills || sceneryType == NearSceneryTypeMountains)
+        {
+            nearSceneryLayer.path = nil;
+            [nearSceneryLayer removeFromParent];
+            nearSceneryLayer = nil;
+        }
     }
     
     for(SKNode *block in recycledBlocks)
     {
-        SKShapeNode *nearSceneryLayer = (SKShapeNode *)[block childNodeWithName:@"nearSceneryLayer"];
-        nearSceneryLayer.path = nil;
-        [nearSceneryLayer removeFromParent];
-        nearSceneryLayer = nil;
+        if(sceneryType == NearSceneryTypeHills || sceneryType == NearSceneryTypeMountains)
+        {
+            SKShapeNode *nearSceneryLayer = (SKShapeNode *)[block childNodeWithName:@"nearSceneryLayer"];
+            nearSceneryLayer.path = nil;
+            [nearSceneryLayer removeFromParent];
+            nearSceneryLayer = nil;
+        }
     }
     
     [super destroyLayer];

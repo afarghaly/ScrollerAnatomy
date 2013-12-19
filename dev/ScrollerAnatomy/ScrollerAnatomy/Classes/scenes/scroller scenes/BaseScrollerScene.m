@@ -8,9 +8,6 @@
 
 #import "BaseScrollerScene.h"
 
-// app singletons
-#import "DeviceUtils.h"
-
 // scene layers
 #import "GradientNode.h"
 #import "DistantSceneryNode.h"
@@ -25,6 +22,7 @@
 #define SCENE_SCALE_DURATION 0.1f
 #define MAX_ZOOM 1.0f
 #define MIN_ZOOM 0.2f
+
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -57,7 +55,7 @@
     
     if(self)
     {
-        
+        environmentData = [[DataUtils sharedDataManager] getEnvironmentDataForKey:@"anatomy"];
         
         return self;
     }
@@ -94,8 +92,10 @@
     zoomLevel = 1.0f;
     scrollSpeed = 0.0f;
     
-    SKColor *skyColor1 = [SKColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:1.0f];
-    SKColor *skyColor2 = [SKColor colorWithRed:0.1f green:0.1f blue:0.1f alpha:1.0f];
+//    NSLog(@"env data: %@", environmentData);
+    
+    SKColor *skyColor1 = [[ColorUtils sharedColorUtils] getColorFromHexString:environmentData[@"skyColor1"]];
+    SKColor *skyColor2 = [[ColorUtils sharedColorUtils] getColorFromHexString:environmentData[@"skyColor2"]];
     NSArray *skyGradientColors = [NSArray arrayWithObjects:skyColor1, skyColor2, nil];
     sky = [[GradientNode alloc] initWithSize:self.frame.size gradientColors:skyGradientColors];
     sky.anchorPoint = CGPointMake(0.5f, 0.0f);
@@ -109,28 +109,67 @@
                                                                    self.view.bounds.size.height),
                                                         NULL);
     viewportBorder.path = viewportBorderPath;
-    viewportBorder.fillColor = [SKColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.0f];
+    viewportBorder.fillColor = [SKColor clearColor];
     viewportBorder.strokeColor = [SKColor colorWithWhite:1.0f alpha:0.2f];
     [self addChild:viewportBorder];
     CGPathRelease(viewportBorderPath);
     viewportBorderPath = nil;
-    // -
     
-    SKColor *distantSceneryVectorColor = [SKColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:0.1f];
-    distantScenery = [[DistantSceneryNode alloc] initWithSceneryColor:distantSceneryVectorColor];
+    //  distant scenery - - - - - - - - - - - - - -
+    
+    NSString *distantSceneryImageName = environmentData[@"distantSceneryImage"];
+    if(distantSceneryImageName && ([distantSceneryImageName length] > 0))
+    {
+        distantScenery = [[DistantSceneryNode alloc] initWithSceneryImage:distantSceneryImageName showsBlockIndex:[environmentData[@"showsBlockIndex"] boolValue]];
+    }
+    else
+    {
+        float distantSceneryAlpha = [environmentData[@"distantSceneryAlpha"] floatValue];
+        SKColor *distantSceneryColor = [[ColorUtils sharedColorUtils] getColorFromHexString:environmentData[@"distantSceneryColor"] alpha:distantSceneryAlpha];
+        
+        float distantSceneryStrokeAlpha = [environmentData[@"distantSceneryStrokeAlpha"] floatValue];
+        SKColor *distantSceneryStrokeColor = [[ColorUtils sharedColorUtils] getColorFromHexString:environmentData[@"distantSceneryStrokeColor"] alpha:distantSceneryStrokeAlpha];
+        
+        distantScenery = [[DistantSceneryNode alloc] initWithSceneryType:DistantSceneryTypeConcavePeaks
+                                                              sceneColor:distantSceneryColor
+                                                             sceneryAlpha:distantSceneryAlpha
+                                                       sceneryStrokeColor:distantSceneryStrokeColor
+                                                       sceneryStrokeAlpha:distantSceneryStrokeAlpha
+                                                          showsBlockIndex:[environmentData[@"showsBlockIndex"] boolValue]];
+    }
     [self addChild:distantScenery];
-    // -
     
-    SKColor *nearSceneryVectorColor = [SKColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:0.1f];
-    nearScenery = [[NearSceneryNode alloc] initWithNearSceneryColor:nearSceneryVectorColor];
+    // near scenery - - - - - - - - - - - - - -
+    
+    NSString *sceneryImageName = environmentData[@"sceneryImage"];
+    if(sceneryImageName && ([sceneryImageName length] > 0))
+    {
+        nearScenery = [[NearSceneryNode alloc] initWithSceneryImage:sceneryImageName showsBlockIndex:[environmentData[@"showsBlockIndex"] boolValue]];
+    }
+    else
+    {
+        float sceneryAlpha = [environmentData[@"sceneryAlpha"] floatValue];
+        SKColor *sceneryColor = [[ColorUtils sharedColorUtils] getColorFromHexString:environmentData[@"sceneryColor"] alpha:sceneryAlpha];
+        
+        float sceneryStrokeAlpha = [environmentData[@"sceneryStrokeAlpha"] floatValue];
+        SKColor *sceneryStrokeColor = [[ColorUtils sharedColorUtils] getColorFromHexString:environmentData[@"sceneryStrokeColor"] alpha:sceneryStrokeAlpha];
+        
+        nearScenery = [[NearSceneryNode alloc] initWithNearSceneryType:NearSceneryTypeHills
+                                                            sceneColor:sceneryColor
+                                                           sceneryAlpha:sceneryAlpha
+                                                     sceneryStrokeColor:sceneryStrokeColor
+                                                     sceneryStrokeAlpha:sceneryStrokeAlpha
+                                                        showsBlockIndex:[environmentData[@"showsBlockIndex"] boolValue]];
+    }
     [self addChild:nearScenery];
-    // -
+    
+    // - - - - - - - - - - - - - -
     
     world = [SKNode node];
     [self addChild:world];
     // -
     
-    terrain = [[Terrain alloc] initWithTerrainColor:[SKColor colorWithWhite:1.0f alpha:0.7f]];
+    terrain = [[Terrain alloc] initWithTerrainColor:[SKColor colorWithWhite:1.0f alpha:0.7f] showsBlockIndex:[environmentData[@"showsBlockIndex"] boolValue]];
     [world addChild:terrain];
     // -
     
@@ -255,4 +294,14 @@
     scrollSpeed = newSpeed_ * MAX_SCROLLING_SPEED;
 }
 
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
 @end
+
+
+
+
+

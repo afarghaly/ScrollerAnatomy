@@ -28,7 +28,6 @@
     [DataUtils sharedDataManager];
     [ColorUtils sharedColorUtils];
     
-    
     // init window
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window makeKeyAndVisible];

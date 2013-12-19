@@ -23,9 +23,9 @@
 
 @implementation Terrain
 
-- (id)initWithTerrainColor:(SKColor *)terrainColor_
+- (id)initWithTerrainColor:(SKColor *)terrainColor_ showsBlockIndex:(BOOL)showsIndex_
 {
-    self = [super init];
+    self = [super initShowingBlockIndex:showsIndex_];
     
     if(self)
     {
@@ -44,9 +44,9 @@
     SKNode *block = [super newBlock];
     
     SKLabelNode *blockID = (SKLabelNode *)[block childNodeWithName:@"blockID"];
-    blockID.fontColor = [SKColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:0.4f];
+    blockID.fontColor = [SKColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:0.75f];
     blockID.fontSize = DeviceIsiPhone() ? 40 : 76;
-    blockID.position = CGPointMake(0, DeviceIsiPhone() ? 30 : 80);
+    blockID.position = CGPointMake(0, DeviceIsiPhone() ? 10 : 30);
     
     SKShapeNode *terrainLayer = [[SKShapeNode alloc] init];
     terrainLayer.fillColor = terrainColor;

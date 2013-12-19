@@ -27,6 +27,7 @@
 
 
 // public method
+- (id)initShowingBlockIndex:(BOOL)showIndex_;
 - (void)scroll:(CGPoint)scrollPosition_;
 
 // declared in .h so overriding subclasses have access

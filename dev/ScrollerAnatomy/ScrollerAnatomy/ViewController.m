@@ -12,6 +12,8 @@
 // ind. scenes
 #import "EmptyScene.h"      // user for menu screen
 #import "ForestScene.h"
+#import "DesertScene.h"
+
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -88,7 +90,8 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-// -----------------------------------------------------------------------
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
 #pragma mark -
@@ -123,6 +126,10 @@
 
 - (void)loadDesertScene
 {
+    DesertScene *desertScene = [DesertScene sceneWithSize:gameSKView.bounds.size];
+    desertScene.scaleMode = SKSceneScaleModeAspectFill;
+    [gameSKView presentScene:desertScene];
+    
     [self showDebugView];
 }
 
@@ -135,6 +142,7 @@
 {
     [self showDebugView];
 }
+
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -179,6 +187,7 @@
 //    debugView = nil;
 }
 
+
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
@@ -194,6 +203,7 @@
 {
 //    NSLog(@"unpause game");
 }
+
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -224,6 +234,7 @@
     [self loadMenuScene];
 }
 
+
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
@@ -242,7 +253,7 @@
 
 - (void)didSelectDesert
 {
-    NSLog(@"did select desert");
+    [self loadDesertScene];
 }
 
 - (void)didSelectMountains
@@ -259,6 +270,7 @@
 {
     NSLog(@"did select about");
 }
+
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -308,6 +320,7 @@
     return (touchLocation.x - (self.view.bounds.size.width / 2)) / (self.view.bounds.size.width / 2);
 }
 
+
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
@@ -318,7 +331,12 @@
 }
 
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
 @end
+
 
 
 

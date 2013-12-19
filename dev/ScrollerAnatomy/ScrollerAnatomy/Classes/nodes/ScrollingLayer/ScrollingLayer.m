@@ -18,6 +18,7 @@
 @interface ScrollingLayer()
 {
     CGRect visibleBounds;
+    BOOL showsBlockIndex;
 }
 
 - (BOOL)isDisplayingBlockForIndex:(int)index_;
@@ -36,7 +37,7 @@
 #pragma mark init
 
 
-- (id)init
+- (id)initShowingBlockIndex:(BOOL)showIndex_
 {
     self = [super init];
     
@@ -44,6 +45,7 @@
     {
         BLOCK_WIDTH = DeviceIsiPhone() ? (DeviceIs4Inch() ? 568.0f : 480.0f) : 1024.0f;
         additionalBlocksToRender = 0;
+        showsBlockIndex = showIndex_;
         
         visibleBlocks = [NSMutableSet setWithCapacity:DEFAULT_BLOCK_COUNT + additionalBlocksToRender];
         recycledBlocks = [NSMutableSet setWithCapacity:DEFAULT_BLOCK_COUNT + additionalBlocksToRender];
@@ -149,7 +151,7 @@
 
 
 
-// public methods  - - - - - - - - - - - - - - - - - - - - - - - - -
+// - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
 
@@ -159,15 +161,17 @@
 - (SKNode *)newBlock
 {
     SKNode *block = [SKNode node];
-//    block.anchorPoint = CGPointMake(0.5f, 0.0f);
     
-    SKLabelNode *blockID = [SKLabelNode labelNodeWithFontNamed:@"HelveticaNeue-Bold"];
-    blockID.fontColor = [SKColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:0.2f];
-    blockID.fontSize = 100;
-    blockID.position = CGPointMake(0, 70);
-    blockID.name = @"blockID";
-    blockID.text = @"0";
-    [block addChild:blockID];
+    if(showsBlockIndex)
+    {
+        SKLabelNode *blockID = [SKLabelNode labelNodeWithFontNamed:@"HelveticaNeue-Bold"];
+        blockID.fontColor = [SKColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:0.2f];
+        blockID.fontSize = 100;
+        blockID.position = CGPointMake(0, 70);
+        blockID.name = @"blockID";
+        blockID.text = @"0";
+        [block addChild:blockID];
+    }
     
     return block;
 }

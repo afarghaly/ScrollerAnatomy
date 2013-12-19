@@ -8,8 +8,29 @@
 
 #import "ScrollingLayer.h"
 
+
+typedef enum
+{
+    NearSceneryTypeImage,
+    NearSceneryTypeHills,
+    NearSceneryTypeMountains,
+    NearSceneryTypeNone
+}NearSceneryType;
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
 @interface NearSceneryNode : ScrollingLayer
 
-- (id)initWithNearSceneryColor:(SKColor *)nearSceneryColor_;
+- (id)initWithNearSceneryType:(NearSceneryType)sceneryType_
+                   sceneColor:(SKColor *)nearSceneryColor_
+                  sceneryAlpha:(float)sceneryAlpha_
+            sceneryStrokeColor:(SKColor *)nearSceneryStrokeColor_
+            sceneryStrokeAlpha:(float)nearSceneryStrokeAlpha_
+               showsBlockIndex:(BOOL)showsIndex_;
+
+- (id)initWithSceneryImage:(NSString *)sceneryImageName_ showsBlockIndex:(BOOL)showsIndex_;
 
 @end

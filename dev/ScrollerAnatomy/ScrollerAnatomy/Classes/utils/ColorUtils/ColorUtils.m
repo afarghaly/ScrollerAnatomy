@@ -73,12 +73,18 @@ static ColorUtils *_sharedColorUtils = nil;
 
 // -
 
+
 - (SKColor *)getColorFromHexString:(NSString *)hexString
+{
+    return [self getColorFromHexString:hexString alpha:1.0f];
+}
+
+- (SKColor *)getColorFromHexString:(NSString *)hexString alpha:(float)alpha_
 {
     unsigned rgbValue = 0;
     NSScanner *scanner = [NSScanner scannerWithString:hexString];
     [scanner setScanLocation:2]; // bypass '#' character
     [scanner scanHexInt:&rgbValue];
-    return [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16)/255.0 green:((rgbValue & 0xFF00) >> 8)/255.0 blue:(rgbValue & 0xFF)/255.0 alpha:1.0];
+    return [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16)/255.0 green:((rgbValue & 0xFF00) >> 8)/255.0 blue:(rgbValue & 0xFF)/255.0 alpha:alpha_];
 }
 @end

@@ -11,11 +11,20 @@
 #import "ColorUtils.h"
 
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
 @interface DistantSceneryNode()
 {
     NSMutableDictionary *distantSceneryBlocksData;
+    
+    DistantSceneryType sceneryType;
+    NSString *distantSceneryImageName;
     float sceneryBaselineY;
     SKColor *distantSceneryColor;
+    float distantSceneryAlpha;
+    SKColor *distantSceneryStrokeColor;
+    float distantSceneryStrokeAlpha;
 }
 
 - (NSArray *)newConcavePeaksData;
@@ -24,24 +33,70 @@
 @end
 
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
 @implementation DistantSceneryNode
 
 
-- (id)initWithSceneryColor:(SKColor *)distantSceneryColor_
+#pragma mark -
+#pragma mark init
+
+- (id)initWithSceneryType:(DistantSceneryType)sceneryType_
+               sceneColor:(SKColor *)distantSceneryColor_
+              sceneryAlpha:(float)distantSceneryAlpha_
+        sceneryStrokeColor:(SKColor *)distantSceneryStrokeColor_
+        sceneryStrokeAlpha:(float)distantSceneryStrokeAlpha_
+           showsBlockIndex:(BOOL)showsIndex_
 {
-    self = [super init];
+    self = [super initShowingBlockIndex:showsIndex_];
     
     if(self)
     {
+        sceneryType = sceneryType_;
+        
         distantSceneryColor = distantSceneryColor_;
+        distantSceneryAlpha = distantSceneryAlpha_;
+        
+        distantSceneryStrokeColor = distantSceneryStrokeColor_;
+        distantSceneryStrokeAlpha = distantSceneryStrokeAlpha_;
+        
         distantSceneryBlocksData = [NSMutableDictionary dictionaryWithCapacity:100];
-        sceneryBaselineY = DeviceIsiPhone() ? 240 : 600;
+        
         
         return self;
     }
     
     return nil;
 }
+
+
+- (id)initWithSceneryImage:(NSString *)sceneryImageName_ showsBlockIndex:(BOOL)showsIndex_
+{
+    self = [super initShowingBlockIndex:showsIndex_];
+    
+    if(self)
+    {
+        UIImage *testImage = [UIImage imageNamed:sceneryImageName_];
+        float sceneryImageWidth = testImage.size.width;
+        BLOCK_WIDTH = sceneryImageWidth;
+        
+        sceneryType = DistantSceneryTypeImage;
+        
+        distantSceneryImageName = sceneryImageName_;
+        
+        return self;
+    }
+    
+    return nil;
+}
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+#pragma mark -
+#pragma mark block creation/modification methods
 
 
 - (SKNode *)newBlock
@@ -54,15 +109,37 @@
     SKLabelNode *blockID = (SKLabelNode *)[block childNodeWithName:@"blockID"];
     blockID.fontColor = [SKColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:0.2f];
     blockID.fontSize = DeviceIsiPhone() ? 20 : 45;
-    blockID.position = CGPointMake(0, DeviceIsiPhone() ? 270 : 650);
+    blockID.position = CGPointMake(0, DeviceIsiPhone() ? 200 : 530);
     
-    SKShapeNode *distantSceneryLayer = [[SKShapeNode alloc] init];
-    distantSceneryLayer.fillColor = distantSceneryColor;
-    distantSceneryLayer.strokeColor = [SKColor colorWithWhite:1.0f alpha:0.2f];
-    distantSceneryLayer.lineWidth = 1.0f;
-    distantSceneryLayer.name = @"distantSceneryLayer";
-    [block addChild:distantSceneryLayer];
-    distantSceneryLayer.position = CGPointMake(-(BLOCK_WIDTH / 2), 0);
+    switch(sceneryType)
+    {
+        case DistantSceneryTypeImage:
+        {
+            SKSpriteNode *distantScenerySpriteLayer = [SKSpriteNode spriteNodeWithImageNamed:distantSceneryImageName];
+            distantScenerySpriteLayer.anchorPoint = CGPointMake(0.0f, 0.0f);
+            distantScenerySpriteLayer.name = @"distantSceneryLayer";
+            [block addChild:distantScenerySpriteLayer];
+            distantScenerySpriteLayer.position = CGPointMake(-(BLOCK_WIDTH / 2), 0);
+            
+        }
+            break;
+            
+        case DistantSceneryTypeConcavePeaks:
+        case DistantSceneryTypeMountains:
+        {
+            SKShapeNode *distantSceneryLayer = [[SKShapeNode alloc] init];
+            distantSceneryLayer.fillColor = distantSceneryColor;
+            distantSceneryLayer.strokeColor = distantSceneryStrokeColor;
+            distantSceneryLayer.lineWidth = 1.0f;
+            distantSceneryLayer.name = @"distantSceneryLayer";
+            [block addChild:distantSceneryLayer];
+            distantSceneryLayer.position = CGPointMake(-(BLOCK_WIDTH / 2), 0);
+        }
+            break;
+            
+        default:
+            break;
+    }
     
     return block;
 }
@@ -75,23 +152,41 @@
     SKLabelNode *blockID = (SKLabelNode *)[block_ childNodeWithName:@"blockID"];
     blockID.text = [NSString stringWithFormat:@"Distant Scenery %d", index_];
     
-    SKShapeNode *distantSceneryLayer = (SKShapeNode *)[block_ childNodeWithName:@"distantSceneryLayer"];
-    distantSceneryLayer.path = nil;
-    
-    NSArray *blockData = [distantSceneryBlocksData objectForKey:[NSNumber numberWithInt:index_]];
-    if(blockData)
+    switch(sceneryType)
     {
-//        NSLog(@"This block rendered before, use saved data");
-        [self renderConcavePeaks:blockData inBlock:block_ forIndex:index_];
-    }
-    else
-    {
-//        NSLog(@"new distant scenery block, render (%d)", [[distantSceneryBlocksData allKeys] count]);
-        blockData = [self newConcavePeaksData];
-        [distantSceneryBlocksData setObject:blockData forKey:[NSNumber numberWithInt:index_]];
-        [self renderConcavePeaks:blockData inBlock:block_ forIndex:index_];
+        case DistantSceneryTypeImage:
+            
+            break;
+            
+        case DistantSceneryTypeConcavePeaks:
+        case DistantSceneryTypeMountains:
+        {
+            SKShapeNode *distantSceneryLayer = (SKShapeNode *)[block_ childNodeWithName:@"distantSceneryLayer"];
+            distantSceneryLayer.path = nil;
+            
+            NSArray *blockData = [distantSceneryBlocksData objectForKey:[NSNumber numberWithInt:index_]];
+            if(blockData)
+            {
+                //        NSLog(@"This block rendered before, use saved data");
+                [self renderConcavePeaks:blockData inBlock:block_ forIndex:index_];
+            }
+            else
+            {
+                //        NSLog(@"new distant scenery block, render (%d)", [[distantSceneryBlocksData allKeys] count]);
+                blockData = [self newConcavePeaksData];
+                [distantSceneryBlocksData setObject:blockData forKey:[NSNumber numberWithInt:index_]];
+                [self renderConcavePeaks:blockData inBlock:block_ forIndex:index_];
+            }
+        }
+            break;
+            
+        default:
+            break;
     }
 }
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
 
@@ -102,6 +197,7 @@
 {
     NSMutableArray *pointsArray = [NSMutableArray arrayWithCapacity:5];
     
+    sceneryBaselineY = DeviceIsiPhone() ? 180 : 370;
     uint concavePeakCount = 3 + (arc4random() % 2);
     float concavePeakWidth = BLOCK_WIDTH / concavePeakCount;
     
@@ -132,7 +228,9 @@
     return pointsArray;
 }
 
-// ------------------------------------------------------------------------
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 
 #pragma mark -
 #pragma mark Distant Scenery rendering
@@ -167,7 +265,9 @@
     path = nil;
 }
 
-// ------------------------------------------------------------------------
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 
 #pragma mark -
 #pragma mark Distant Scenery cleanup
@@ -177,17 +277,23 @@
     for(SKNode *block in visibleBlocks)
     {
         SKShapeNode *distantSceneryLayer = (SKShapeNode *)[block childNodeWithName:@"distantSceneryLayer"];
-        distantSceneryLayer.path = nil;
-        [distantSceneryLayer removeFromParent];
-        distantSceneryLayer = nil;
+        if(sceneryType == DistantSceneryTypeConcavePeaks || sceneryType == DistantSceneryTypeMountains)
+        {
+            distantSceneryLayer.path = nil;
+            [distantSceneryLayer removeFromParent];
+            distantSceneryLayer = nil;
+        }
     }
     
     for(SKNode *block in recycledBlocks)
     {
-        SKShapeNode *distantSceneryLayer = (SKShapeNode *)[block childNodeWithName:@"distantSceneryLayer"];
-        distantSceneryLayer.path = nil;
-        [distantSceneryLayer removeFromParent];
-        distantSceneryLayer = nil;
+        if(sceneryType == DistantSceneryTypeConcavePeaks || sceneryType == DistantSceneryTypeMountains)
+        {
+            SKShapeNode *distantSceneryLayer = (SKShapeNode *)[block childNodeWithName:@"distantSceneryLayer"];
+            distantSceneryLayer.path = nil;
+            [distantSceneryLayer removeFromParent];
+            distantSceneryLayer = nil;
+        }
     }
     
     [super destroyLayer];
@@ -197,6 +303,12 @@
 }
 
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
 @end
+
+
 
 
